@@ -1,0 +1,9 @@
+{
+  "dashboard": {
+    "totalAssets": 0,
+    "totalDebt": 0
+  },
+  "stocks": [],
+  "foreignCurrency": [],
+  "loans": []
+}
