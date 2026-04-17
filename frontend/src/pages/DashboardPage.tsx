@@ -19,7 +19,6 @@ const DashboardPage: React.FC = () => {
   }, []);
 
   const cards: SummaryCard[] = [
-    { label: '總資產', value: 'NT$ 2,840,000', sub: '+4.2% 本月', trend: 'up', color: 'card--teal' },
     { label: '股票投資', value: 'NT$ 1,200,000', sub: '+8.5% 報酬率', trend: 'up', color: 'card--blue' },
     { label: '外幣 / 定存', value: 'NT$ 980,000', sub: 'USD · JPY · EUR', trend: 'neutral', color: 'card--gold' },
     { label: '貸款餘額', value: 'NT$ 340,000', sub: '剩餘 18 期', trend: 'down', color: 'card--red' },
