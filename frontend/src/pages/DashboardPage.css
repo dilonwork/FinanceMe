@@ -1,0 +1,264 @@
+/* DashboardPage.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
+
+/* ── Root ─────────────────────────────────── */
+.db-root {
+  font-family: 'Sora', sans-serif;
+  background: #0f1117;
+  color: #e8eaf0;
+  min-height: 100vh;
+  padding: 0 0 5rem;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+.db-root--in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Header ───────────────────────────────── */
+.db-header {
+  padding: 2.4rem 1.4rem 0.8rem;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.db-header__eyebrow {
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #6b7280;
+  margin-bottom: 0.3rem;
+}
+.db-header__title {
+  font-size: 1.9rem;
+  font-weight: 700;
+  background: linear-gradient(120deg, #4EC9B0 0%, #60A5FA 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.15;
+  margin-bottom: 0.25rem;
+}
+.db-header__date {
+  font-size: 0.78rem;
+  color: #4b5563;
+}
+
+/* ── Hero Net Worth ───────────────────────── */
+.db-hero {
+  margin: 1.6rem 1.4rem 0;
+  background: linear-gradient(135deg, #1a2236 0%, #1e2d3d 100%);
+  border: 1px solid rgba(78,201,176,0.18);
+  border-radius: 16px;
+  padding: 1.8rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+.db-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at top right, rgba(78,201,176,0.12) 0%, transparent 65%);
+  pointer-events: none;
+}
+.db-hero__label {
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #4EC9B0;
+  margin-bottom: 0.5rem;
+}
+.db-hero__value {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #f0f4f8;
+  line-height: 1.1;
+  margin-bottom: 0.75rem;
+}
+.db-hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.78rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 20px;
+  font-weight: 600;
+}
+.db-hero__badge--up {
+  background: rgba(78,201,176,0.15);
+  color: #4EC9B0;
+  border: 1px solid rgba(78,201,176,0.3);
+}
+
+/* ── Summary Cards ────────────────────────── */
+.db-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.9rem;
+  margin: 1.2rem 1.4rem 0;
+}
+.db-card {
+  border-radius: 14px;
+  padding: 1.1rem 1rem;
+  animation: cardIn 0.4s ease both;
+  border: 1px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+.db-card::after {
+  content: '';
+  position: absolute;
+  top: -30%;
+  right: -20%;
+  width: 70%;
+  height: 70%;
+  border-radius: 50%;
+  opacity: 0.07;
+  background: white;
+}
+
+.card--teal   { background: #0f2e29; border-color: rgba(78,201,176,0.25); }
+.card--blue   { background: #0f1f35; border-color: rgba(96,165,250,0.25); }
+.card--gold   { background: #2a1f0a; border-color: rgba(251,191,36,0.25); }
+.card--red    { background: #2a0f0f; border-color: rgba(248,113,113,0.25); }
+
+.db-card__label {
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #6b7280;
+  margin-bottom: 0.45rem;
+}
+.db-card__value {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #e8eaf0;
+  line-height: 1.25;
+}
+.db-card__sub {
+  font-size: 0.7rem;
+  margin-top: 0.4rem;
+}
+.db-card__sub--up      { color: #4EC9B0; }
+.db-card__sub--down    { color: #f87171; }
+.db-card__sub--neutral { color: #9ca3af; }
+
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Section Title ────────────────────────── */
+.db-section-title {
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #4b5563;
+  margin-bottom: 0.9rem;
+}
+
+/* ── Allocation ───────────────────────────── */
+.db-alloc {
+  margin: 1.8rem 1.4rem 0;
+}
+.db-alloc__bar {
+  display: flex;
+  height: 10px;
+  border-radius: 99px;
+  overflow: hidden;
+  gap: 2px;
+  margin-bottom: 0.9rem;
+}
+.db-alloc__seg {
+  border-radius: 99px;
+  transition: opacity 0.2s;
+}
+.db-alloc__seg:hover { opacity: 0.75; }
+.db-alloc__legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem 1.2rem;
+}
+.db-alloc__item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+.db-alloc__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.db-alloc__pct {
+  font-family: 'JetBrains Mono', monospace;
+  color: #e8eaf0;
+  font-size: 0.7rem;
+}
+
+/* ── Quick Links ──────────────────────────── */
+.db-quick {
+  margin: 1.8rem 1.4rem 0;
+}
+.db-quick__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.8rem;
+}
+.db-quick__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 0.5rem;
+  background: #161b27;
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 14px;
+  text-decoration: none;
+  color: #9ca3af;
+  font-size: 0.72rem;
+  text-align: center;
+  transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.15s;
+}
+.db-quick__card:hover {
+  background: #1e2740;
+  border-color: rgba(78,201,176,0.35);
+  color: #e8eaf0;
+  transform: translateY(-2px);
+}
+.db-quick__icon {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+.db-quick__label {
+  line-height: 1.3;
+}
+
+/* ── Desktop Layout Enhancements ──────────────────────────── */
+@media (min-width: 768px) {
+  .db-header {
+    padding: 3.5rem 3rem 1.5rem;
+  }
+  .db-hero {
+    margin: 2rem 3rem 0;
+    padding: 2.5rem;
+  }
+  .db-cards {
+    margin: 1.5rem 3rem 0;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .db-alloc {
+    margin: 2.5rem 3rem 0;
+  }
+  .db-alloc__bar {
+    height: 16px;
+  }
+  .db-quick {
+    margin: 2.5rem 3rem 0;
+  }
+}

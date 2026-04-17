@@ -1,0 +1,180 @@
+/* src/pages/PageStyles.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
+
+/* ── Root ─────────────────────────────────── */
+.pg-root {
+  font-family: 'Sora', sans-serif;
+  padding: 0 0 5rem;
+  opacity: 0;
+  transform: translateY(12px);
+  animation: pageIn 0.45s ease forwards;
+}
+
+@keyframes pageIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Header ───────────────────────────────── */
+.pg-header {
+  padding: 2.4rem 1.4rem 1.2rem;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.pg-header__title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(120deg, #4EC9B0 0%, #60A5FA 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.pg-header__desc {
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
+
+/* ── Content Area ─────────────────────────── */
+.pg-content {
+  padding: 1.4rem;
+}
+
+/* ── Card ─────────────────────────────────── */
+.pg-card {
+  background: #161b27;
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 14px;
+  padding: 1.2rem;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.pg-card__title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #e8eaf0;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* ── Forms & Inputs ───────────────────────── */
+.pg-input {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #e8eaf0;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  transition: border-color 0.2s;
+  margin-bottom: 0.8rem;
+}
+
+.pg-input:focus {
+  outline: none;
+  border-color: #60A5FA;
+}
+
+.pg-input::placeholder {
+  color: #6b7280;
+}
+
+/* ── Buttons ──────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.2rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+  font-family: 'Sora', sans-serif;
+  width: 100%;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: white;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(37, 99, 235, 0.4);
+}
+
+.btn-danger {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.btn-danger:hover:not(:disabled) {
+  background: rgba(239, 68, 68, 0.2);
+}
+
+.btn--sm {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.8rem;
+  width: auto;
+}
+
+/* ── Utilities ────────────────────────────── */
+.text-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.text-green { color: #4EC9B0; }
+.text-red { color: #ef4444; }
+.text-gray { color: #9ca3af; }
+
+.alert-error {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #f87171;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.2rem;
+  font-size: 0.85rem;
+}
+
+/* ── Desktop Layout Enhancements ──────────────────────────── */
+@media (min-width: 768px) {
+  .pg-header {
+    padding: 3.5rem 3rem 2rem;
+  }
+  
+  .pg-header__title {
+    font-size: 2.2rem;
+  }
+
+  .pg-content {
+    padding: 2rem 3rem;
+  }
+  
+  /* Apply grid layout to pg-content if it contains multiple cards */
+  .pg-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    align-items: start;
+  }
+}

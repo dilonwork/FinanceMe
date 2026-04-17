@@ -2,7 +2,7 @@
 import axios from 'axios';
 import type { Stock } from '../types';
 
-const BACKEND_URL = 'http://localhost:3000'; // 後端服務的地址
+const BACKEND_URL = ''; // 使用 Vite proxy 所以不需要寫死 http://localhost:3000
 
 export const dataService = {
   // 從後端獲取所有股票

@@ -10,10 +10,10 @@
 }
 
 body {
-  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Sora', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   line-height: 1.6;
-  background-color: #f4f7f6;
-  color: #333;
+  background-color: #0c0f16;
+  color: #e8eaf0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;
@@ -24,10 +24,10 @@ body {
   flex-direction: column;
   min-height: 100vh;
   width: 100%;
-  max-width: 600px; /* 限制手機版網站的最大寬度 */
+  max-width: 1200px; /* 支援桌機大螢幕尺寸 */
   margin: 0 auto;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  background-color: #ffffff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  background-color: #0f1117;
 }
 
 /* Basic App Layout Styles (from App.tsx for now, will move to App.css) */

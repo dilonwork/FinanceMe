@@ -1,0 +1,14 @@
+/* App.css */
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #0f1117;
+}
+
+.app-content {
+  flex: 1;
+  /* 底部留空間給固定 Navbar（高度約 64px + safe area） */
+  padding-bottom: calc(64px + env(safe-area-inset-bottom));
+}
